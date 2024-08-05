@@ -19,6 +19,22 @@ const newPostFormHandler = async (event) => {
     }
   };
   
+  const deletePostHandler = async (event) => {
+    if (event.target.classList.contains('delete-post')) {
+      const id = event.target.closest('article').dataset.id;
+  
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to delete post');
+      }
+    }
+  };
+  
   const editPostHandler = async (event) => {
     if (event.target.classList.contains('edit-post')) {
       const article = event.target.closest('article');
@@ -42,23 +58,7 @@ const newPostFormHandler = async (event) => {
     }
   };
   
-  const deletePostHandler = async (event) => {
-    if (event.target.classList.contains('delete-post')) {
-      const id = event.target.closest('article').dataset.id;
-  
-      const response = await fetch(`/api/posts/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to delete post');
-      }
-    }
-  };
-  
   document.querySelector('#new-post-form').addEventListener('submit', newPostFormHandler);
-  document.querySelector('main').addEventListener('click', editPostHandler);
   document.querySelector('main').addEventListener('click', deletePostHandler);
+  document.querySelector('main').addEventListener('click', editPostHandler);
   

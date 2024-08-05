@@ -7,6 +7,17 @@
   <title>Tech Blog</title>
 </head>
 <body>
-  {{{body}}}
+  {{!-- Header Partial --}}
+  {{> header}}
+
+  <main>
+    {{{body}}}
+  </main>
+
+  {{!-- Footer Partial --}}
+  {{> footer}}
+
+  {{!-- Logout Script --}}
+  <script src="/js/logout.js"></script>
 </body>
 </html>
