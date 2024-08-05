@@ -26,31 +26,38 @@ Tech Blog is a CMS-style blog site where developers can publish their blog posts
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/SailorVirgo/CMS-Style-Blog-Site.git
-
+   ```
 2. Navigate to the project directory:
    ```bash
    cd tech-blog
+   ```
 3. Install the necessary dependencies:
    ```bash
    npm install
+   ```
 4. Create a .env file in the root directory and add your database credentials:
    ```bash
    DB_NAME=tech_blog_db
    DB_USER=your_database_username
    DB_PASSWORD=your_database_password
+   ```
+   
 5. Create the PostgreSQL database:
    ```bash
    psql -U your_database_username
    CREATE DATABASE tech_blog_db;
+   ```
 
 
 ## Usage
 1. Seed the database with initial data:
    ```bash
    node db/seed.js
+   ```
 2. Start the server:
    ```bash
    npm start
+   ```
 3. Open your web browser and navigate to `http://localhost:3001`
 
 ## Technologies Used
