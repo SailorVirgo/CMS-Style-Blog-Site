@@ -1,96 +1,177 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #202020;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #333;
+  background-color: #d9ead3;
+  border-radius: 7px;
+  padding: 3px 20px 3px 20px;
+  box-shadow: 10px 10px 0 #a7a7a7;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+  font-size: 1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 0 1em;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+}
+
+form div {
+  margin-bottom: 1em;
+}
+
+form label {
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+form input,
+form textarea {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 94%;
+}
+
+form button {
   
-  header, nav {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1em;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1, h2 {
-    color: #333;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  form div {
-    margin-bottom: 1em;
-  }
-  
-  form label {
-    margin-bottom: 0.5em;
-    color: #333;
-  }
-  
-  form input, form textarea {
-    padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form button {
-    padding: 0.75em;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #555;
-  }
-  
-  article {
-    margin-bottom: 2em;
-    padding: 1em;
-    background-color: #fafafa;
-    border-left: 5px solid #333;
-  }
-  
-  article h3 {
-    margin-top: 0;
-  }
-  
-  button.edit-post, button.delete-post {
-    margin-right: 1em;
-  }
-  
-  /* Login and Signup Pages */
-  #login-form, #signup-form {
-    max-width: 400px;
-    margin: 2em auto;
-    padding: 1em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
+  padding: 0.75em;
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 300px;
+}
+
+ 
+
+form button:hover {
+  background-color: #333;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+article {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* article img {
+  width: 100%;
+  height: auto;
+} */
+
+article h3 {
+  margin: 1em;
+  font-size: 1.25em;
+}
+
+article p {
+  margin: 0 1em 1em 1em;
+  color: #777;
+}
+
+button.edit-post,
+button.delete-post {
+  margin: 1em;
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.edit-post:hover,
+button.delete-post:hover {
+  background-color: #333;
+}
+
+/* Comment Section */
+.comment {
+  padding: 1em;
+  border-top: 1px solid #ccc;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.comment p:last-child {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #202020;
+  color: #fff;
+}

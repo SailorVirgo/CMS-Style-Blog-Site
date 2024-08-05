@@ -1,23 +1,12 @@
-{{#if logged_in}}
-<nav>
-  <a href="/">Home</a>
-  <a href="/dashboard">Dashboard</a>
-  <a href="/logout">Logout</a>
-</nav>
-{{else}}
-<nav>
-  <a href="/">Home</a>
-  <a href="/login">Login</a>
-  <a href="/signup">Sign Up</a>
-</nav>
-{{/if}}
-
 <main>
-  {{#each posts}}
-  <article>
-    <h2>{{this.title}}</h2>
-    <p>By {{this.user.username}} on {{this.createdAt}}</p>
-    <p>{{this.content}}</p>
-  </article>
-  {{/each}}
+  <h1>Welcome to the Tech Blog</h1>
+  <div class="grid-container">
+    {{#each posts}}
+      <article>
+        <h3>{{this.title}}</h3>
+        <p>By {{this.user.username}} on {{this.createdAt}}</p>
+        <p>{{this.content}}</p>
+      </article>
+    {{/each}}
+  </div>
 </main>
